@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+
+    </head>
+    <body>
+    	<h1>Hola Franco</h1>
+    	<p>Hola desde PhoneGap</p>
+    	<p id="salida">Aguarde...</p>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8">
+        	window.onload = function(){
+        		document.addEventListener("deviceready",function(){
+        			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado';
+        		},false);
+        	}
+        </script>
+    </body>
+</html>
