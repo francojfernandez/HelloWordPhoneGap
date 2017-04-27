@@ -15,13 +15,13 @@
         <div id="ajax">
             
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8">
         	window.onload = function(){
         		document.addEventListener("deviceready",function(){
         			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
                     var xhr = new XMLHttpRequest(); 
-                    xhr.open("GET","msj.html",true);
+                    xhr.open("GET"," http://api.gatocurioso.com.ar/php-code/listado.php",true);
                     xhr.send();                 
                     xhr.onreadystatechange = function(){
                         if(xhr.readyState == 4 && xhr.status == 200){
