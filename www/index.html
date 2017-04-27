@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta http-equiv="Content-Security-Policy" content="" connect-src *; content=""/>
         <title>Blank App</title>
 
     </head>
@@ -11,11 +12,23 @@
     	<p>Hola desde PhoneGap</p>
     	<p id="salida">Aguarde Android...</p>
     	<p id="salida2">Aguarde Pc</p>
-        <script type="text/javascript" src="phonegap.js"></script>
+        <div id="ajax">
+            
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8">
         	window.onload = function(){
         		document.addEventListener("deviceready",function(){
         			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
+                    var xhr = new XMLHttpRequest(); 
+                    xhr.open("GET","msj.html",true);
+                    xhr.send();                 
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState == 4 && xhr.status == 200){
+                            document.getElementById("ajax").innerHTML = xhr.responseText;
+                        }
+                    };
+                    console.log('salida');
         		},false);
 					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
         	}
