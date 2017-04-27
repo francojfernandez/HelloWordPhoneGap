@@ -21,7 +21,7 @@
         		document.addEventListener("deviceready",function(){
         			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
                     var xhr = new XMLHttpRequest(); 
-                    xhr.open("GET"," http://api.gatocurioso.com.ar/php-code/listado.php",true);
+                    xhr.open("GET"," msj.html",true);
                     xhr.send();                 
                     xhr.onreadystatechange = function(){
                         if(xhr.readyState == 4 && xhr.status == 200){
