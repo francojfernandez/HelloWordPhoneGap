@@ -13,5 +13,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="http://*/*" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
