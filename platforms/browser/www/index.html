@@ -9,13 +9,15 @@
     <body>
     	<h1>Hola Franco</h1>
     	<p>Hola desde PhoneGap</p>
-    	<p id="salida">Aguarde...</p>
+    	<p id="salida">Aguarde Android...</p>
+    	<p id="salida2">Aguarde Pc</p>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8">
         	window.onload = function(){
         		document.addEventListener("deviceready",function(){
-        			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado';
+        			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
         		},false);
+					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
         	}
         </script>
     </body>
