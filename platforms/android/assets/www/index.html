@@ -15,6 +15,7 @@
     	<p id="salida">Aguarde Android...</p>
     	<p id="salida2">Aguarde Pc</p>
         <button id="boton">Descargar Contenido</button>
+        <div id="url"></div>
         <div id="ajax">
             
         </div>
@@ -36,6 +37,7 @@
                     };
                     console.log('salida');
                     boton.onclick = function(){
+                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/msj.html';
                         var xhr = new XMLHttpRequest(); 
                         xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msj.html",true);
                         xhr.send();                 
