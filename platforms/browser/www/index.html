@@ -19,7 +19,7 @@
         <div id="descargarcontenido">
             
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8">
         	window.onload = function(){
         		document.addEventListener("deviceready",function(){
@@ -35,7 +35,7 @@
                     console.log('salida');
                     boton.onclick = function(){
                         var xhr = new XMLHttpRequest(); 
-                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/listado.php",true);
+                        xhr.open("GET","msj.html",true);
                         xhr.send();                 
                         xhr.onreadystatechange = function(){
                             if(xhr.readyState == 4 && xhr.status == 200){
