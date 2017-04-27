@@ -35,7 +35,7 @@
                     console.log('salida');
                     boton.onclick = function(){
                         var xhr = new XMLHttpRequest(); 
-                        xhr.open("GET"," http://api.gatocurioso.com.ar/php-code/msj.html",true);
+                        xhr.open("GET","msj.html",true);
                         xhr.send();                 
                         xhr.onreadystatechange = function(){
                             if(xhr.readyState == 4 && xhr.status == 200){
