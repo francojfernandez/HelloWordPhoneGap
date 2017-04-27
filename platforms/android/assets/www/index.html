@@ -12,7 +12,11 @@
     	<p>Hola desde PhoneGap</p>
     	<p id="salida">Aguarde Android...</p>
     	<p id="salida2">Aguarde Pc</p>
+        <button id="boton">Descargar Contenido</button>
         <div id="ajax">
+            
+        </div>
+        <div id="descargarcontenido">
             
         </div>
         <script type="text/javascript" src="cordova.js"></script>
@@ -29,8 +33,19 @@
                         }
                     };
                     console.log('salida');
+                    boton.onclick = function(){
+                        var xhr = new XMLHttpRequest(); 
+                        xhr.open("GET"," http://api.gatocurioso.com.ar/php-code/msj.html",true);
+                        xhr.send();                 
+                        xhr.onreadystatechange = function(){
+                            if(xhr.readyState == 4 && xhr.status == 200){
+                                document.getElementById("descargarcontenido").innerHTML = xhr.responseText;
+                            }
+                        };
+                    }
         		},false);
 					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
+
         	}
         </script>
     </body>
