@@ -29,7 +29,7 @@
         		document.addEventListener("deviceready",function(){
         			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
                     var xhr = new XMLHttpRequest(); 
-                    xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msj.php",true);
+                    xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msjnuevo.php",true);
                     xhr.send();                 
                     xhr.onreadystatechange = function(){
                         if(xhr.readyState == 4 && xhr.status == 200){
@@ -38,9 +38,9 @@
                     };
                     console.log('salida');
                     boton.onclick = function(){
-                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/msj.php';
+                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/msjnuevo.php';
                         var xhr = new XMLHttpRequest(); 
-                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msj.php",true);
+                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msjnuevo.php",true);
                         xhr.send();                 
                         xhr.onreadystatechange = function(){
                             if(xhr.readyState == 4 && xhr.status == 200){
