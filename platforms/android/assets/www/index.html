@@ -38,31 +38,18 @@
                     };
                     console.log('salida');
                     boton.onclick = function(){
-                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/msjnuevo.php';
+                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/listado.php';
                         var xhr = new XMLHttpRequest(); 
-                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msjnuevo.php",true);
+                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/listado.php",true);
                         xhr.send();                 
                         xhr.onreadystatechange = function(){
                             if(xhr.readyState == 4 && xhr.status == 200){
                                 document.getElementById("descargarcontenido").innerHTML = xhr.responseText;
-                                alert(xhr.responseText);
                             }
                         };
                     }
         		},false);
-					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
-                boton.onclick = function(){
-                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/msjnuevo.php';
-                        var xhr = new XMLHttpRequest(); 
-                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/msjnuevo.php",true);
-                        xhr.send();                 
-                        xhr.onreadystatechange = function(){
-                            if(xhr.readyState == 4 && xhr.status == 200){
-                                document.getElementById("descargarcontenido").innerHTML = xhr.responseText;
-                                alert(xhr.responseText);
-                            }
-                        };
-                    }    
+					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';   
         	}
         </script>
     </body>
