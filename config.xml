@@ -18,8 +18,5 @@
     <allow-intent href="http://*.google.com" />
     <allow-intent href="http://*.googleapis.com" />
     <allow-intent href="http://*.gstatic.com" />
-    
-    <access origin=”*.google.com” />
-    <access origin=”*.googleapis.com” />
-    <access origin=”*.gstatic.com” />
+
 </widget>
