@@ -23,8 +23,10 @@
         <div id="descargarcontenido">
             
         </div>
+        <div id="map-canvas"></div> 
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" charset="utf-8">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+        <!-- <script type="text/javascript" charset="utf-8">
         	window.onload = function(){
         		document.addEventListener("deviceready",function(){
         			document.getElementById('salida').innerHTML = 'PhoneGap Inicializado APK';
@@ -51,6 +53,41 @@
 					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
    
         	}
-        </script>
+        </script> -->
+
+        <script> 
+            var map; 
+            var myLatlng; 
+            function initialize(lat,long) { 
+                myLatlng = new google.maps.LatLng(lat, long); 
+                var mapOptions = { 
+                    zoom: 8, 
+                    center: myLatlng 
+                }; 
+                 
+                map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions); 
+                 
+                var marker = new google.maps.Marker({ 
+                    position: myLatlng, 
+                    map: map, 
+                    title: 'Mi punto en el mapa' 
+                }); 
+                 
+            } 
+
+            document.addEventListener("deviceready", onDeviceReady, false); 
+             
+            function onDeviceReady() { 
+                navigator.geolocation.getCurrentPosition(onSuccess, onError); 
+            } 
+             
+            function onSuccess(position) { 
+                initialize(position.coords.latitude,position.coords.longitude); 
+            } 
+                       
+            function onError(error) { 
+                alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n'); 
+            } 
+        </script> 
     </body>
 </html>
