@@ -7,10 +7,12 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.6" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="http://api.gatocurioso.com.ar/*" />
+    <allow-intent href="http://*.google.com" />
+    <allow-intent href="http://*.googleapis.com" />
+    <allow-intent href="http://*.gstatic.com" />
 </widget>
