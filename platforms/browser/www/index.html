@@ -11,11 +11,11 @@
 
     </head>
     <body>
-    	<h1>Hola team Eureka!!</h1>
+    	<h1>Hola Franco</h1>
     	<p>Hola desde PhoneGap</p>
     	<p id="salida">Aguarde Android...</p>
     	<p id="salida2">Aguarde Pc</p>
-
+        <button id="boton">Descargar Contenido</button>
         <div id="url"></div>
         <div id="ajax">
             
@@ -36,9 +36,20 @@
                             document.getElementById("ajax").innerHTML = xhr.responseText;
                         }
                     };
-
+                    boton.onclick = function(){
+                        document.getElementById("url").innerHTML = 'URL:'+ 'http://api.gatocurioso.com.ar/php-code/listado.php';
+                        var xhr = new XMLHttpRequest(); 
+                        xhr.open("GET","http://api.gatocurioso.com.ar/php-code/listado.php",true);
+                        xhr.send();                 
+                        xhr.onreadystatechange = function(){
+                            if(xhr.readyState == 4 && xhr.status == 200){
+                                document.getElementById("descargarcontenido").innerHTML = xhr.responseText;
+                            }
+                        };
+                    }
         		},false);
-					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';   
+					document.getElementById('salida2').innerHTML = 'PhoneGap Inicializado PC';
+   
         	}
         </script>
     </body>
